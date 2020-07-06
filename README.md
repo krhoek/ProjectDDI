@@ -1,5 +1,3 @@
 # ProjectDDI
 
-Hoi dit is een test bestand
-
-Dit is een test
+Dit is een nieuwe feature voor het project
