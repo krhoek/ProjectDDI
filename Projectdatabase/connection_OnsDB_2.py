@@ -22,6 +22,6 @@ if db_org.get('dialect') == 'mssql':
 engine = create_engine(connection_string)
 session = Session(engine)
 
-data = pd.read_sql_query("Select top 5 * from  producten", session.bind)
+data = pd.read_sql_query("Select top 5 * from  products", session.bind)
 print(data)
 
