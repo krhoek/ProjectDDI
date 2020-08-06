@@ -1,0 +1,19 @@
+organization:
+
+database_org:
+  username: khoek@cardia.nl
+  password: 20@)qfsiMA
+  server: NLVECA-SQL-02.cardia.local
+  port: 1433
+  database: OnsDB
+  dialect: mssql
+  driver: ODBC Driver 17 for SQL Server
+  trusted_connection: 'yes'
+
+database_pub:
+  username: ddi.sa.shared
+  password: K&9*2hZqxE63=uU;
+  server: eiklsfzhfc.database.windows.net
+  port: 1433
+  database: clientjourney
+  dialect: mssql
