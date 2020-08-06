@@ -19,13 +19,9 @@ connection_string = f"{db_org.get('dialect')}://{db_org.get('username')}:{db_org
 if db_org.get('dialect') == 'mssql':
     connection_string = connection_string + f"?driver={db_org.get('driver')}&trusted_connection={db_org.get('trusted_connection')}"
 
-print('----------------------------------------------------------')
-print('----------------------------------------------------------')
-print(connection_string)
-
 engine = create_engine(connection_string)
 session = Session(engine)
 
-data = pd.read_sql_query("Select top 5 * from  products", session.bind)
+data = pd.read_sql_query("Select top 5 * from  producten", session.bind)
 print(data)
 

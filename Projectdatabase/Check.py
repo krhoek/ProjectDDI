@@ -13,5 +13,5 @@ session = Session(engine)
 
 print(engine.table_names())
 
-data3 = pd.read_sql_query("Select * from  producten", session.bind)
+data3 = pd.read_sql_query("Select * from  organisatie", session.bind)
 print(data3)

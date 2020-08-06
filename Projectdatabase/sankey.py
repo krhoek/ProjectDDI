@@ -12,7 +12,7 @@ engine = create_engine(DATABASE_CONNECTION,echo = True)
 session = Session(engine)
 
 # Select producten and touchpoints
-data_producten = pd.read_sql_query("Select product_id, financiering from producten", session.bind)
+data_producten = pd.read_sql_query("Select product_id, producttype from producten", session.bind)
 data_touchpoints = pd.read_sql_query("Select client_id, target_id, touchpoint_tijd from  touchpoint Where touchpoint.type_touchpoint_id = 'tt_1'" , session.bind)
 
 # Rename column product_id to target_id
@@ -25,7 +25,7 @@ data = pd.merge(data_producten,data_touchpoints, on ='target_id', how = 'inner')
 data.drop(columns='target_id', axis = 1, inplace = True)
 
 # Rename column x to target_id
-data.rename(columns={'financiering': 'target_id'}, inplace=True)
+data.rename(columns={'producttype': 'target_id'}, inplace=True)
 
 # Check if touchpoint_tijd are Pandas Datetime types:
 data['touchpoint_tijd'] = pd.to_datetime(data['touchpoint_tijd'], unit='d')
